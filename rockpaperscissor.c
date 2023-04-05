@@ -31,14 +31,15 @@ extern int rps() {
     printf("Rock, Paper or Scissor?\n=>");
     scanf("%s", &player_selection);
 
-    if (strcmp(player_selection, name[ROCK]) == 0) {
+    if (strcasecmp(player_selection, name[ROCK]) == 0) {
         player = ROCK;
-    } else if (strcmp(player_selection, name[PAPER]) == 0) {
+    } else if (strcasecmp(player_selection, name[PAPER]) == 0) {
         player = PAPER;
-    } else if (strcmp(player_selection, name[SCISSOR]) == 0) {
+    } else if (strcasecmp(player_selection, name[SCISSOR]) == 0) {
         player = SCISSOR;
     } else {
         printf("Error");
+        return 0;
     }
 
     // Action Phase

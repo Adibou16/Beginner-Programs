@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-extern int gg(void) {
+extern int gg() {
     // Rules
     printf("%s", "WELCOME TO TO NUMBER GUESSING GAME\n");
     printf("%s", "I WILL GUESS A NUMBER BETWEEN 1 AND 100 AND YOU HAVE 10 CHANCES TO FIND OUT MY NUMBER.....\n");
@@ -20,13 +20,15 @@ extern int gg(void) {
             printf("failure\n");
         } else {
             if (guess > number) {
-                printf("MY NUMBER IS LOWER, YOU HAVE %dREMAINING.\n", tries);
+                printf("MY NUMBER IS LOWER, YOU HAVE %d TRIES REMAINING.\n", tries);
             } else if (guess < number) {
-                printf("MY NUMBER IS HIGHER, YOU HAVE %d REMAINING.\n", tries);
+                printf("MY NUMBER IS HIGHER, YOU HAVE %d TRIES REMAINING.\n", tries);
             } else if (guess == number){
-                printf("GOOD JOB! YOU GUESSED IT IN %d, TRIES.", tries);
+                printf("GOOD JOB! YOU GUESSED IT IN %d TRIES.", 10 - tries);
+                return 0;
             }
         }
     }
     printf("%s", "YOU LOST");
+    return 0;
 }
